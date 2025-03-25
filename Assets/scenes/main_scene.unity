@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 193509144}
   m_Layer: 5
-  m_Name: spawnPoin_6
+  m_Name: SpawnPoin_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 260062230}
   - component: {fileID: 260062229}
   m_Layer: 5
-  m_Name: conteinerPanels
+  m_Name: ConteinerPanels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 260868756}
   - component: {fileID: 260868755}
   m_Layer: 5
-  m_Name: playSceneCanvas
+  m_Name: PlaySceneCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,7 +1247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 484525873}
   m_Layer: 5
-  m_Name: spawnPoin_7
+  m_Name: SpawnPoin_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1282,7 +1282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 538431548}
   m_Layer: 5
-  m_Name: spawnPoin_1
+  m_Name: SpawnPoin_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 545336556}
   - component: {fileID: 545336557}
   m_Layer: 5
-  m_Name: trigger_2_down
+  m_Name: Trigger_2_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1506,7 +1506,7 @@ GameObject:
   - component: {fileID: 667274372}
   - component: {fileID: 667274371}
   m_Layer: 5
-  m_Name: conteinerPanel (4)
+  m_Name: ConteinerPanel (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 692778288}
   - component: {fileID: 692778289}
   m_Layer: 5
-  m_Name: trigger_2_mid
+  m_Name: Trigger_2_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1676,7 +1676,7 @@ GameObject:
   - component: {fileID: 706298426}
   - component: {fileID: 706298427}
   m_Layer: 5
-  m_Name: centrRopePoint
+  m_Name: CentrRopePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 708098989}
   - component: {fileID: 708098988}
   m_Layer: 5
-  m_Name: mainMenuCanvas
+  m_Name: MainMenuCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1847,7 +1847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739952707}
   m_Layer: 5
-  m_Name: spawnPoin_2
+  m_Name: SpawnPoin_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2095,7 +2095,7 @@ GameObject:
   - component: {fileID: 851315837}
   - component: {fileID: 851315836}
   m_Layer: 5
-  m_Name: conteinerPanel (2)
+  m_Name: ConteinerPanel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2214,7 +2214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 900798584}
   m_Layer: 5
-  m_Name: spawnPoin_8
+  m_Name: SpawnPoin_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2249,7 +2249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906892378}
   m_Layer: 5
-  m_Name: spawnPoin_4
+  m_Name: SpawnPoin_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2425,7 +2425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 939305681}
-  scoreController: {fileID: 939305679}
 --- !u!114 &939305685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2438,7 +2437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c27db77e57be8d4d8c27eeb4284a717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreControllerLink: {fileID: 939305679}
 --- !u!114 &939305686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2554,7 +2552,7 @@ GameObject:
   - component: {fileID: 992313259}
   - component: {fileID: 992313260}
   m_Layer: 5
-  m_Name: trigger_3_mid
+  m_Name: Trigger_3_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2606,7 +2604,7 @@ GameObject:
   - component: {fileID: 1030106345}
   - component: {fileID: 1030106344}
   m_Layer: 5
-  m_Name: dynamicCanvas
+  m_Name: DynamicCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2764,7 +2762,7 @@ GameObject:
   - component: {fileID: 1188614632}
   - component: {fileID: 1188614633}
   m_Layer: 5
-  m_Name: peak
+  m_Name: Peak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2847,7 +2845,7 @@ GameObject:
   - component: {fileID: 1194150605}
   - component: {fileID: 1194150604}
   m_Layer: 5
-  m_Name: conteinerPanel (3)
+  m_Name: ConteinerPanel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2968,7 +2966,7 @@ GameObject:
   - component: {fileID: 1293890585}
   - component: {fileID: 1293890584}
   m_Layer: 5
-  m_Name: conteinerPanel (1)
+  m_Name: ConteinerPanel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3091,7 +3089,7 @@ GameObject:
   - component: {fileID: 1309042375}
   - component: {fileID: 1309042378}
   m_Layer: 5
-  m_Name: thorns_3
+  m_Name: Thorns_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3488,7 +3486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433657029}
   m_Layer: 5
-  m_Name: spawnPoin_5
+  m_Name: SpawnPoin_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3524,7 +3522,7 @@ GameObject:
   - component: {fileID: 1459745555}
   - component: {fileID: 1459745556}
   m_Layer: 5
-  m_Name: trigger_3_down
+  m_Name: Trigger_3_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3576,7 +3574,7 @@ GameObject:
   - component: {fileID: 1461555746}
   - component: {fileID: 1461555747}
   m_Layer: 5
-  m_Name: trigger_1_up
+  m_Name: Trigger_1_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3626,7 +3624,7 @@ GameObject:
   - component: {fileID: 1476482651}
   - component: {fileID: 1476482652}
   m_Layer: 5
-  m_Name: peak
+  m_Name: Peak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3761,7 +3759,7 @@ GameObject:
   - component: {fileID: 1535424051}
   - component: {fileID: 1535424052}
   m_Layer: 5
-  m_Name: trigger_3_up
+  m_Name: Trigger_3_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3811,7 +3809,7 @@ GameObject:
   - component: {fileID: 1561889049}
   - component: {fileID: 1561889048}
   m_Layer: 0
-  m_Name: switchScene
+  m_Name: SwitchScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3861,7 +3859,7 @@ GameObject:
   - component: {fileID: 1579688587}
   - component: {fileID: 1579688590}
   m_Layer: 5
-  m_Name: thorns_1
+  m_Name: Thorns_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4070,7 +4068,7 @@ GameObject:
   - component: {fileID: 1609240887}
   - component: {fileID: 1609240890}
   m_Layer: 5
-  m_Name: thorns_2
+  m_Name: Thorns_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4201,7 +4199,7 @@ GameObject:
   - component: {fileID: 1612901036}
   - component: {fileID: 1612901037}
   m_Layer: 5
-  m_Name: trigger_2_up
+  m_Name: Trigger_2_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4251,7 +4249,7 @@ GameObject:
   - component: {fileID: 1719510205}
   - component: {fileID: 1719510206}
   m_Layer: 5
-  m_Name: sphereAnimSpawn
+  m_Name: SphereAnimSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4314,7 +4312,7 @@ GameObject:
   - component: {fileID: 1872191190}
   - component: {fileID: 1872191191}
   m_Layer: 5
-  m_Name: trigger_1_mid
+  m_Name: Trigger_1_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4501,7 +4499,7 @@ GameObject:
   - component: {fileID: 1972365034}
   - component: {fileID: 1972365033}
   m_Layer: 5
-  m_Name: dynamicCanvas
+  m_Name: DynamicCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4874,7 +4872,7 @@ GameObject:
   - component: {fileID: 2099300362}
   - component: {fileID: 2099300365}
   m_Layer: 5
-  m_Name: trigger_1_down
+  m_Name: Trigger_1_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5059,7 +5057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2121670297}
   m_Layer: 5
-  m_Name: spawnPoin_3
+  m_Name: SpawnPoin_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
