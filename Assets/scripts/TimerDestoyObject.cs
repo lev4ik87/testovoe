@@ -9,11 +9,11 @@ public class TimerDestoyObject : MonoBehaviour
     private void OnEnable()
     {
         Destroy(gameObject, timerValue);
-        CheckLineSphereColor.OnGameOver += DestroyObject;
+        CheckLineColor.OnGameOver += DestroyObject;
     }
     private void OnDisable()
     {
-        CheckLineSphereColor.OnGameOver -= DestroyObject;
+        CheckLineColor.OnGameOver -= DestroyObject;
     }
 
     private void DestroyObject()

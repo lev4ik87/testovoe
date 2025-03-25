@@ -13,14 +13,14 @@ public abstract class SphereColorDetect : MonoBehaviour
 
     private void OnEnable()
     {
-        CheckLineSphereColor.OnGameOver += ResetTrigger;
+        CheckLineColor.OnGameOver += ResetTriggers;
         _transform = transform;
         StartCoroutine("ColorDetectCor");
 
     }
     private void OnDisable()
     {
-        CheckLineSphereColor.OnGameOver -= ResetTrigger;
+        CheckLineColor.OnGameOver -= ResetTriggers;
     }
 
     protected  IEnumerator ColorDetectCor()
@@ -44,7 +44,7 @@ public abstract class SphereColorDetect : MonoBehaviour
         return countTriggerActive;
     }
 
-    protected void ResetTrigger()
+    protected void ResetTriggers()
     {
         countTriggerActive = 0;
         sphere = null;

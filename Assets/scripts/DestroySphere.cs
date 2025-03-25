@@ -8,11 +8,11 @@ public class DestroySphere : MonoBehaviour
     private GameObject particle;
     private void OnEnable()
     {
-        CheckLineSphereColor.OnGameOver += ResetSphere;
+        CheckLineColor.OnGameOver += ResetSphere;
     }
     private void OnDisable()
     {
-        CheckLineSphereColor.OnGameOver -= ResetSphere;
+        CheckLineColor.OnGameOver -= ResetSphere;
     }
 
 

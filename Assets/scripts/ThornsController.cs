@@ -10,11 +10,11 @@ public class ThornsController : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine("CheckLineCor");
-        CheckLineSphereColor.OnGameOver += ResetThorns;
+        CheckLineColor.OnGameOver += ResetThorns;
     }
     private void OnDisable()
     {
-        CheckLineSphereColor.OnGameOver += ResetThorns;
+        CheckLineColor.OnGameOver += ResetThorns;
     }
 
 

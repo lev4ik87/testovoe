@@ -3704,6 +3704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491333807}
   - component: {fileID: 1491333808}
+  - component: {fileID: 1491333809}
   m_Layer: 5
   m_Name: hookPoint
   m_TagString: Untagged
@@ -3748,6 +3749,21 @@ MonoBehaviour:
   - {fileID: 8125846809461247323, guid: 0ad9f8f8b0f69ca4c857ee37c562f289, type: 3}
   - {fileID: 8125846809461247323, guid: 3a20bbb87026552469fadeba19483e6f, type: 3}
   - {fileID: 8125846809461247323, guid: 376a9cc757597494c95dd62779792f35, type: 3}
+--- !u!114 &1491333809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491333806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d1ff2c56800e642800e3a4d0ab4711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hook: {fileID: 1491333807}
+  dynamicCanvas: {fileID: 1972365032}
+  hookSphereSpawn: {fileID: 1491333808}
 --- !u!1 &1535424050
 GameObject:
   m_ObjectHideFlags: 0

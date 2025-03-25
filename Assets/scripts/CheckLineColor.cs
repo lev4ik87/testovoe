@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class CheckLineSphereColor : MonoBehaviour
+public class CheckLineColor : MonoBehaviour
 {
     [SerializeField] SphereColorDetect[] gorizontLine_1;
     [SerializeField] SphereColorDetect[] gorizontLine_2;

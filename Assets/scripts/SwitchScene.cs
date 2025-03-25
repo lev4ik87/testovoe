@@ -11,11 +11,11 @@ public class SwitchScene : MonoBehaviour
 
     private void OnEnable()
     {
-        CheckLineSphereColor.OnGameOver += GameOver; 
+        CheckLineColor.OnGameOver += GameOver; 
     }
     private void OnDisable()
     {
-        CheckLineSphereColor.OnGameOver -= GameOver;
+        CheckLineColor.OnGameOver -= GameOver;
     }
 
     public void MainMenu()
