@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class SphereColorDetect_UpTrigger : SphereColorDetect
 {
-    public override void ColorDetect()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        colliderSphere = Physics2D.OverlapCircleAll(_transform.position, 0.1f);
-
-        if (colliderSphere.Length > 0)
+        if (other.TryGetComponent<SphereColor>(out SphereColor _sphere))
         {
-            if (detectColor == SphereColor.sphereColorsEnum.empty)
-            {
-                colliderSphere[0].TryGetComponent<SphereColor>(out SphereColor _sphere);
-                sphere = _sphere.gameObject;
-                detectColor = _sphere.color;
-                countTriggerActive++;     
-            }
-        }
-        else
-        {
-            if (detectColor != SphereColor.sphereColorsEnum.empty)
-            {
-                sphere = null;
-                detectColor = SphereColor.sphereColorsEnum.empty;
-                countTriggerActive--;    
-            }
+            DetectSphere(_sphere);
         }
     }
+
+   protected override void DetectSphere(SphereColor _sphere)
+    {
+        if (detectColor == SphereColor.sphereColorsEnum.empty)
+        {
+            sphere = _sphere.gameObject;
+            sphere.GetComponent<SphereColor>().GetTrigger(this);
+            detectColor = _sphere.color;
+            countTriggerActive++;    
+        }
+    }
+
+   
 }

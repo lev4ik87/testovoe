@@ -9,13 +9,18 @@ public class HookSphereSpawn : MonoBehaviour
     [SerializeField] private Transform dynamicCanvas;
     [SerializeField] private GameObject[] spherePrefabs;
 
+    [SerializeField] HookSphereDrop hookSphereDrop;
+
     private GameObject sphere;
 
-    public event Action<GameObject> OnGetSphere;
-
-    private void Start()
+    private void OnEnable()
     {
+        hookSphereDrop.OnDropSphere += SphereSpawn;
         SphereSpawn();
+    }
+    private void OnDisable()
+    {
+        hookSphereDrop.OnDropSphere -= SphereSpawn;
     }
 
 
@@ -24,13 +29,7 @@ public class HookSphereSpawn : MonoBehaviour
      sphere = Instantiate(spherePrefabs[UnityEngine.Random.Range(0, spherePrefabs.Length)], Vector2.zero, Quaternion.identity);
      sphere.transform.SetParent(hook, false);
      sphere.transform.position = hook.position;
-     OnGetSphere?.Invoke(sphere);
+     hookSphereDrop.GetSphere(sphere);
     }
 
-    IEnumerator SphereSpawnCor()
-    {
-        yield return new WaitForSeconds(1);
-
-        SphereSpawn();
-    } 
 }

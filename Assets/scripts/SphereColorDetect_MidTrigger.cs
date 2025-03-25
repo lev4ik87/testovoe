@@ -6,33 +6,23 @@ public class SphereColorDetect_MidTrigger : SphereColorDetect
 {
     [SerializeField] private GameObject upTrigger;
 
-
-
-    public override void ColorDetect()
-    {   
-        colliderSphere = Physics2D.OverlapCircleAll(_transform.position, 0.1f);
-
-        if (colliderSphere.Length > 0)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent<SphereColor>(out SphereColor _sphere))
         {
-            if (detectColor == SphereColor.sphereColorsEnum.empty)
-            {
-                colliderSphere[0].TryGetComponent<SphereColor>(out SphereColor _sphere);
-                sphere = _sphere.gameObject;
-                detectColor = _sphere.color;
-                countTriggerActive++;
-                upTrigger.SetActive(true);
-            }
-
-            
+            DetectSphere(_sphere);
         }
-        else
+    }
+
+    protected override void DetectSphere(SphereColor _sphere)
+    {
+        if (detectColor == SphereColor.sphereColorsEnum.empty)
         {
-            if (detectColor != SphereColor.sphereColorsEnum.empty)
-            {
-                sphere = null;
-                detectColor = SphereColor.sphereColorsEnum.empty;
-                countTriggerActive--;  
-            }
-        }  
+            sphere = _sphere.gameObject;
+            sphere.GetComponent<SphereColor>().GetTrigger(this);
+            detectColor = _sphere.color;
+            countTriggerActive++;
+            upTrigger.SetActive(true);
+        }
     }
 }

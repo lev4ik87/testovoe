@@ -8,13 +8,12 @@ public class ChangeScoreData : MonoBehaviour
     private int scoreCountValue;
 
     private IScoreChangeData scoreChange;
-    private ISetTotalScore scoreController;
+   [SerializeField]  private GameObject scoreController;
 
   
     private void OnEnable()
     {
-        scoreChange = ScoreController.link;
-        scoreController = ScoreController.link;
+        scoreChange = scoreController.GetComponent<IScoreChangeData>();
         scoreChange.OnScoreChangeData += ChangeScore;
     }
     private void OnDisable()
@@ -28,7 +27,7 @@ public class ChangeScoreData : MonoBehaviour
     {
         scoreCountValue += score;
         scoreCountValue = Mathf.Clamp(scoreCountValue, 0, 999999);
-        scoreController.SetTotalScore(scoreCountValue);    
+        scoreController.GetComponent<ISetTotalScore>().SetTotalScore(scoreCountValue);    
     }
 
     private void ResetScore()

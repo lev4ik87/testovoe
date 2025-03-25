@@ -8,16 +8,16 @@ public class ChangeScoreViev : MonoBehaviour
 {
     
     [SerializeField] private TextMeshProUGUI scoreText;
-     private IScoreChangeViev scoreController;
-  
+    [SerializeField] private GameObject scoreController;
+
+ 
     private void OnEnable()
-    {
-        scoreController = ScoreController.link;
-        scoreController.OnScoreChangeViev += ChangeScoreText;
+    {   
+        scoreController.GetComponent<IScoreChangeViev>().OnScoreChangeViev += ChangeScoreText;
     }
     private void OnDisable()
     {
-        scoreController.OnScoreChangeViev -= ChangeScoreText;
+        scoreController.GetComponent<IScoreChangeViev>().OnScoreChangeViev -= ChangeScoreText;
     }
 
     private void ChangeScoreText(int totalScore)

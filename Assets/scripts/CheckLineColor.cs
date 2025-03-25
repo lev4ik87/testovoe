@@ -42,7 +42,7 @@ public class CheckLineColor : MonoBehaviour
             CheckLine(diagonalLine_1);
             CheckLine(diagonalLine_2);
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.5f);
 
             if (SphereColorDetect.GetCountTriggerActive() == 9)
             {
@@ -62,7 +62,7 @@ public class CheckLineColor : MonoBehaviour
             {
                 foreach (var item in line)
                 {
-                    item.sphere.GetComponent<SphereScoreCost>().AddScore();
+                    item.sphere.GetComponent<ScoreSphere>().AddScore();
                     item.sphere.GetComponent<DestroySphere>().DestoySphere();
                 }
             }

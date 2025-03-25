@@ -7,36 +7,42 @@ public class SphereColorDetect_DownTrigger : SphereColorDetect
     [SerializeField] private GameObject midTrigger;
     [SerializeField] private GameObject upTrigger;
 
-    public override void ColorDetect()
-    {     
-        colliderSphere = Physics2D.OverlapCircleAll(_transform.position, 0.1f);
 
-        if (colliderSphere.Length > 0)
-        {
-            if (detectColor == SphereColor.sphereColorsEnum.empty)
-            {
-                colliderSphere[0].TryGetComponent<SphereColor>(out SphereColor _sphere);
-                sphere = _sphere.gameObject;
-                detectColor = _sphere.color;
-                countTriggerActive++;    
-                midTrigger.SetActive(true);
-            }
+    private void OnEnable()
+    {
+        StartCoroutine("DisableTriggersCor");
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {   
+        if (other.TryGetComponent<SphereColor>(out SphereColor _sphere))
+        { 
+            DetectSphere(_sphere);
+        } 
+    }
 
-           
-        }
-        else
+    IEnumerator DisableTriggersCor()
+    {
+        while (true)
         {
-            if (detectColor != SphereColor.sphereColorsEnum.empty)
-            {
-                sphere = null;
-                detectColor = SphereColor.sphereColorsEnum.empty;
-                countTriggerActive--;
-                Invoke("DisableEmptyTriggers", 1);
-            }
+            yield return new WaitForSeconds(1);
+            DisableEmptyTrigger();
         }
-    } 
-    
-    private void DisableEmptyTriggers()
+    }
+
+
+    protected override void DetectSphere(SphereColor _sphere)
+    {
+        if (detectColor == SphereColor.sphereColorsEnum.empty)
+        {      
+            sphere = _sphere.gameObject;
+            sphere.GetComponent<SphereColor>().GetTrigger(this);
+            detectColor = _sphere.color;
+            countTriggerActive++;
+            midTrigger.SetActive(true);
+        }
+    }
+
+    private void DisableEmptyTrigger()
     {
         if (midTrigger.GetComponent<SphereColorDetect>().detectColor == SphereColor.sphereColorsEnum.empty)
             upTrigger.SetActive(false);
@@ -44,4 +50,5 @@ public class SphereColorDetect_DownTrigger : SphereColorDetect
         if (detectColor == SphereColor.sphereColorsEnum.empty)
             midTrigger.SetActive(false);
     }
+ 
 }

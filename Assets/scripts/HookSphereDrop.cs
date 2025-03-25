@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class HookSphereDrop : MonoBehaviour
 {
     [SerializeField] private Transform hook;
     [SerializeField] private Transform dynamicCanvas;
-    [SerializeField] HookSphereSpawn hookSphereSpawn;
+   
     private GameObject sphere;
+
+    public event Action OnDropSphere;
 
     private void OnEnable()
     {
-        InputController.OnOneTap += DropSphere;
-        hookSphereSpawn.OnGetSphere += GetSphere;
+        InputController.OnOneTap += DropSphere;      
     }
     private void OnDisable()
     {
-        InputController.OnOneTap -= DropSphere;
-        hookSphereSpawn.OnGetSphere -= GetSphere;
+        InputController.OnOneTap -= DropSphere;   
     }
 
     private void DropSphere()
@@ -28,11 +29,16 @@ public class HookSphereDrop : MonoBehaviour
             sphere.transform.position = hook.position;
             sphere.GetComponent<Rigidbody2D>().simulated = true;
             sphere = null;
-            hookSphereSpawn.StartCoroutine("SphereSpawnCor");
+            Invoke("SpawnSphere", 1);
         }
     }
 
-    private void GetSphere(GameObject _sphere)
+    private void SpawnSphere()
+    {
+        OnDropSphere.Invoke();
+    }
+
+    public void GetSphere(GameObject _sphere)
     {
         sphere = _sphere;
     }

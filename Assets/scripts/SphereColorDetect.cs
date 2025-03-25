@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SphereColorDetect : MonoBehaviour
+public abstract class SphereColorDetect : MonoBehaviour, IResetTrigger
 {
     [HideInInspector] public SphereColor.sphereColorsEnum detectColor;
     [HideInInspector] public GameObject sphere;
@@ -14,31 +14,15 @@ public abstract class SphereColorDetect : MonoBehaviour
     private void OnEnable()
     {
         CheckLineColor.OnGameOver += ResetTriggers;
-        _transform = transform;
-        StartCoroutine("ColorDetectCor");
-
+        _transform = transform;  
     }
     private void OnDisable()
     {
         CheckLineColor.OnGameOver -= ResetTriggers;
     }
 
-    protected  IEnumerator ColorDetectCor()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(0.5f);
-
-            ColorDetect();     
-        }
-      
-    }
-
-
-    public abstract void ColorDetect();
-  
-  
-
+    protected abstract void DetectSphere(SphereColor _sphere);
+ 
     public static int GetCountTriggerActive()
     {
         return countTriggerActive;
@@ -49,5 +33,12 @@ public abstract class SphereColorDetect : MonoBehaviour
         countTriggerActive = 0;
         sphere = null;
         detectColor = SphereColor.sphereColorsEnum.empty;
+    }
+
+    void IResetTrigger.ResetTrigger()
+    {
+        sphere = null;
+        detectColor = SphereColor.sphereColorsEnum.empty;
+        countTriggerActive--; 
     }
 }
