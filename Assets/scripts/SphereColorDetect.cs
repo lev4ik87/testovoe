@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class SphereColorDetect : MonoBehaviour, IResetTrigger
 {
-    [HideInInspector] public SphereColor.sphereColorsEnum detectColor;
-    [HideInInspector] public GameObject sphere;
+    /*[HideInInspector]*/ public SphereColor.sphereColorsEnum detectColor;
+    /*[HideInInspector] */public GameObject sphere;
     protected static int countTriggerActive;
 
     protected Transform _transform;
@@ -13,13 +13,23 @@ public abstract class SphereColorDetect : MonoBehaviour, IResetTrigger
 
     private void OnEnable()
     {
-        CheckLineColor.OnGameOver += ResetTriggers;
+        CheckLineColor.OnGameOver += EndGameResetTriggers;
         _transform = transform;  
     }
     private void OnDisable()
     {
-        CheckLineColor.OnGameOver -= ResetTriggers;
+        CheckLineColor.OnGameOver -= EndGameResetTriggers;
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (detectColor != SphereColor.sphereColorsEnum.empty)
+        {
+            ResetTrigger();
+        }
+    }
+
+
 
     protected abstract void DetectSphere(SphereColor _sphere);
  
@@ -28,14 +38,14 @@ public abstract class SphereColorDetect : MonoBehaviour, IResetTrigger
         return countTriggerActive;
     }
 
-    protected void ResetTriggers()
+    protected void EndGameResetTriggers()
     {
         countTriggerActive = 0;
         sphere = null;
         detectColor = SphereColor.sphereColorsEnum.empty;
     }
 
-    void IResetTrigger.ResetTrigger()
+   public void ResetTrigger()
     {
         sphere = null;
         detectColor = SphereColor.sphereColorsEnum.empty;

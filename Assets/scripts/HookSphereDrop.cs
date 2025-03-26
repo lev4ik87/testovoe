@@ -35,7 +35,7 @@ public class HookSphereDrop : MonoBehaviour
 
     private void SpawnSphere()
     {
-        OnDropSphere.Invoke();
+        OnDropSphere?.Invoke();
     }
 
     public void GetSphere(GameObject _sphere)

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ScoreController : MonoBehaviour,IScoreChangeController, IScoreChangeData, ISetTotalScore, IScoreChangeViev
+public class ScoreController : MonoBehaviour,IScoreChangeController, IScoreChangeModel, ISetTotalScore, IScoreChangeViev
 {
     private int totalScore;
     public static ScoreController link;
    
 
-    public event Action<int> OnScoreChangeData;
+    public event Action<int> OnScoreChangeModel;
     public event Action<int> OnScoreChangeViev;
 
     private void Awake()
@@ -19,7 +19,7 @@ public class ScoreController : MonoBehaviour,IScoreChangeController, IScoreChang
 
     void IScoreChangeController.ChangeScore(int score)
     {
-        OnScoreChangeData.Invoke(score);
+        OnScoreChangeModel.Invoke(score);
     }
 
     void ISetTotalScore.SetTotalScore(int score)

@@ -13,13 +13,13 @@ public class SphereColorDetect_MidTrigger : SphereColorDetect
             DetectSphere(_sphere);
         }
     }
+   
 
     protected override void DetectSphere(SphereColor _sphere)
     {
         if (detectColor == SphereColor.sphereColorsEnum.empty)
         {
-            sphere = _sphere.gameObject;
-            sphere.GetComponent<SphereColor>().GetTrigger(this);
+            sphere = _sphere.gameObject;   
             detectColor = _sphere.color;
             countTriggerActive++;
             upTrigger.SetActive(true);

@@ -34,8 +34,7 @@ public class SphereColorDetect_DownTrigger : SphereColorDetect
     {
         if (detectColor == SphereColor.sphereColorsEnum.empty)
         {      
-            sphere = _sphere.gameObject;
-            sphere.GetComponent<SphereColor>().GetTrigger(this);
+            sphere = _sphere.gameObject;    
             detectColor = _sphere.color;
             countTriggerActive++;
             midTrigger.SetActive(true);

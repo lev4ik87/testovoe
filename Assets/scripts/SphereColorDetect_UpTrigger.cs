@@ -12,12 +12,12 @@ public class SphereColorDetect_UpTrigger : SphereColorDetect
         }
     }
 
-   protected override void DetectSphere(SphereColor _sphere)
+
+    protected override void DetectSphere(SphereColor _sphere)
     {
         if (detectColor == SphereColor.sphereColorsEnum.empty)
         {
             sphere = _sphere.gameObject;
-            sphere.GetComponent<SphereColor>().GetTrigger(this);
             detectColor = _sphere.color;
             countTriggerActive++;    
         }

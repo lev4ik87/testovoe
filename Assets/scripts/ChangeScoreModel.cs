@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ChangeScoreData : MonoBehaviour
+public class ChangeScoreModel : MonoBehaviour
 {
     private int scoreCountValue;
 
-    private IScoreChangeData scoreChange;
+    private IScoreChangeModel scoreChange;
    [SerializeField]  private GameObject scoreController;
 
   
     private void OnEnable()
     {
-        scoreChange = scoreController.GetComponent<IScoreChangeData>();
-        scoreChange.OnScoreChangeData += ChangeScore;
+        scoreChange = scoreController.GetComponent<IScoreChangeModel>();
+        scoreChange.OnScoreChangeModel += ChangeScore;
+        CheckLineColor.OnGameOver += ResetScore;
     }
     private void OnDisable()
     {
-        scoreChange.OnScoreChangeData -= ChangeScore;
-        ResetScore();
+        scoreChange.OnScoreChangeModel -= ChangeScore;
+        CheckLineColor.OnGameOver -= ResetScore;     
     }
 
 
