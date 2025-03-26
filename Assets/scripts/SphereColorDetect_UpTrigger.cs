@@ -15,17 +15,18 @@ public class SphereColorDetect_UpTrigger : SphereColorDetect
     private void OnTriggerExit2D(Collider2D other)
     {
         ResetTrigger();
-        thornsController.CheckLine();
+
+        if (thornsController.isActiveAndEnabled)
+            thornsController.CheckLine();
     }
 
 
     protected override void DetectSphere(SphereColor _sphere)
     {
-        if (detectColor == SphereColor.sphereColorsEnum.empty)
-        {
-            sphere = _sphere.gameObject;
-            detectColor = _sphere.color;
-            countTriggerActive++;
-        }
+        sphere = _sphere.gameObject;
+        detectColor = _sphere.color;
+        countTriggerActive++;
+        Debug.Log(countTriggerActive + " " + gameObject.name);
     }
+
 }

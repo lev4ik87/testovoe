@@ -2,9 +2,9 @@ using UnityEngine;
 
 public abstract class SphereColorDetect : MonoBehaviour
 {
-    /*[HideInInspector]*/
+    //[HideInInspector]
     public SphereColor.sphereColorsEnum detectColor;
-    /*[HideInInspector] */
+    //[HideInInspector]
     public GameObject sphere;
     protected static int countTriggerActive;
 
@@ -13,12 +13,12 @@ public abstract class SphereColorDetect : MonoBehaviour
 
     private void OnEnable()
     {
-        CheckLineColor.OnGameOver += EndGameResetTriggers;
+        CheckLineColor.OnGameOver += ResetAllTriggersEndGame;
         _transform = transform;
     }
     private void OnDisable()
     {
-        CheckLineColor.OnGameOver -= EndGameResetTriggers;
+        CheckLineColor.OnGameOver -= ResetAllTriggersEndGame;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -34,7 +34,7 @@ public abstract class SphereColorDetect : MonoBehaviour
         return countTriggerActive;
     }
 
-    protected void EndGameResetTriggers()
+    protected void ResetAllTriggersEndGame()
     {
         countTriggerActive = 0;
         sphere = null;
@@ -46,5 +46,6 @@ public abstract class SphereColorDetect : MonoBehaviour
         sphere = null;
         detectColor = SphereColor.sphereColorsEnum.empty;
         countTriggerActive--;
+        Debug.Log(countTriggerActive + " " + gameObject.name);
     }
 }

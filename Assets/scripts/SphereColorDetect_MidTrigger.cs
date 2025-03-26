@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SphereColorDetect_MidTrigger : SphereColorDetect
@@ -13,16 +11,14 @@ public class SphereColorDetect_MidTrigger : SphereColorDetect
             DetectSphere(_sphere);
         }
     }
-   
 
     protected override void DetectSphere(SphereColor _sphere)
     {
-        if (detectColor == SphereColor.sphereColorsEnum.empty)
-        {
-            sphere = _sphere.gameObject;   
-            detectColor = _sphere.color;
-            countTriggerActive++;
-            upTrigger.SetActive(true);
-        }
+        sphere = _sphere.gameObject;
+        detectColor = _sphere.color;
+        countTriggerActive++;
+        upTrigger.GetComponent<Collider2D>().enabled = true;
+        Debug.Log(countTriggerActive+" "+ gameObject.name);
+
     }
 }

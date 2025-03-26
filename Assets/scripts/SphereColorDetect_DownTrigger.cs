@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SphereColorDetect_DownTrigger : SphereColorDetect
 {
-    [SerializeField] private GameObject midTrigger;
-    [SerializeField] private GameObject upTrigger;
+    [SerializeField] private SphereColorDetect midTrigger;
+    [SerializeField] private SphereColorDetect upTrigger;
 
 
     private void OnEnable()
@@ -13,18 +12,18 @@ public class SphereColorDetect_DownTrigger : SphereColorDetect
         StartCoroutine("DisableTriggersCor");
     }
     private void OnTriggerEnter2D(Collider2D other)
-    {   
+    {
         if (other.TryGetComponent<SphereColor>(out SphereColor _sphere))
-        { 
+        {
             DetectSphere(_sphere);
-        } 
+        }
     }
 
     IEnumerator DisableTriggersCor()
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             DisableEmptyTrigger();
         }
     }
@@ -32,22 +31,24 @@ public class SphereColorDetect_DownTrigger : SphereColorDetect
 
     protected override void DetectSphere(SphereColor _sphere)
     {
-        if (detectColor == SphereColor.sphereColorsEnum.empty)
-        {      
-            sphere = _sphere.gameObject;    
-            detectColor = _sphere.color;
-            countTriggerActive++;
-            midTrigger.SetActive(true);
-        }
+        sphere = _sphere.gameObject;
+        detectColor = _sphere.color;
+        countTriggerActive++;
+        midTrigger.GetComponent<Collider2D>().enabled = true;
+        Debug.Log(countTriggerActive + " " + gameObject.name);
     }
 
     private void DisableEmptyTrigger()
     {
-        if (midTrigger.GetComponent<SphereColorDetect>().detectColor == SphereColor.sphereColorsEnum.empty)
-            upTrigger.SetActive(false);
+        if (midTrigger.detectColor == SphereColor.sphereColorsEnum.empty 
+            && upTrigger.detectColor == SphereColor.sphereColorsEnum.empty)
 
-        if (detectColor == SphereColor.sphereColorsEnum.empty)
-            midTrigger.SetActive(false);
+            upTrigger.GetComponent<Collider2D>().enabled = false;
+
+        if (detectColor == SphereColor.sphereColorsEnum.empty 
+            && midTrigger.detectColor == SphereColor.sphereColorsEnum.empty)
+
+            midTrigger.GetComponent<Collider2D>().enabled = false;
     }
- 
+
 }

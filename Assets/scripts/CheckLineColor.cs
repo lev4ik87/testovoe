@@ -15,10 +15,7 @@ public class CheckLineColor : MonoBehaviour
 
     [SerializeField] SphereColorDetect[] diagonalLine_1;
     [SerializeField] SphereColorDetect[] diagonalLine_2;
-
-
-    private SphereColorDetect[] triggers;
-
+ 
     public static event Action OnGameOver;
 
     private void OnEnable()
@@ -42,7 +39,7 @@ public class CheckLineColor : MonoBehaviour
             CheckLine(diagonalLine_1);
             CheckLine(diagonalLine_2);
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
 
             if (SphereColorDetect.GetCountTriggerActive() == 9)
             {

@@ -20,11 +20,11 @@ public class ThornsController : MonoBehaviour
 
     IEnumerator CheckLineCor()
     {
+        yield return new WaitForSeconds(1);
         if (line[0].sphere != null && line[1].sphere != null && line[2].sphere != null)
         {
             if (line[0].detectColor != line[1].detectColor || line[1].detectColor != line[2].detectColor)
-            {
-                yield return new WaitForSeconds(1);
+            {      
                 thorns.SetActive(true);
             }
         }
