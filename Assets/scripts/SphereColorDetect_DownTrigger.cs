@@ -46,7 +46,8 @@ public class SphereColorDetect_DownTrigger : SphereColorDetect
             upTrigger.GetComponent<Collider2D>().enabled = false;
 
         if (detectColor == SphereColor.sphereColorsEnum.empty 
-            && midTrigger.detectColor == SphereColor.sphereColorsEnum.empty)
+            && midTrigger.detectColor == SphereColor.sphereColorsEnum.empty
+            && upTrigger.detectColor == SphereColor.sphereColorsEnum.empty)
 
             midTrigger.GetComponent<Collider2D>().enabled = false;
     }
