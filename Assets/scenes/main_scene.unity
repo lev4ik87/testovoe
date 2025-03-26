@@ -883,7 +883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &260868755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,6 +1316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 545336556}
+  - component: {fileID: 545336559}
   - component: {fileID: 545336557}
   - component: {fileID: 545336558}
   m_Layer: 5
@@ -1395,6 +1396,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &545336559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545336555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15e67677e472ff46b6b16d917ff4223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line:
+  - {fileID: 545336557}
+  - {fileID: 692778289}
+  - {fileID: 1612901037}
+  thorns: {fileID: 1609240885}
 --- !u!1 &598693566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,7 +1832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &708098988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3631,6 +3649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1459745555}
+  - component: {fileID: 1459745558}
   - component: {fileID: 1459745556}
   - component: {fileID: 1459745557}
   m_Layer: 5
@@ -3710,6 +3729,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1459745558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459745554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15e67677e472ff46b6b16d917ff4223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line:
+  - {fileID: 1459745556}
+  - {fileID: 992313260}
+  - {fileID: 1535424052}
+  thorns: {fileID: 1309042373}
 --- !u!1 &1461555745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3761,6 +3797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectColor: 3
   sphere: {fileID: 0}
+  thornsController: {fileID: 2099300367}
 --- !u!58 &1461555748
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3998,6 +4035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectColor: 3
   sphere: {fileID: 0}
+  thornsController: {fileID: 1459745558}
 --- !u!58 &1535424053
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4474,6 +4512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectColor: 3
   sphere: {fileID: 0}
+  thornsController: {fileID: 545336559}
 --- !u!58 &1612901038
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4905,9 +4944,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2017287161}
   - component: {fileID: 2017287162}
-  - component: {fileID: 2017287165}
-  - component: {fileID: 2017287164}
-  - component: {fileID: 2017287163}
   m_Layer: 5
   m_Name: lineController
   m_TagString: Untagged
@@ -4978,57 +5014,6 @@ MonoBehaviour:
   - {fileID: 1459745556}
   - {fileID: 692778289}
   - {fileID: 1461555747}
---- !u!114 &2017287163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017287160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15e67677e472ff46b6b16d917ff4223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  line:
-  - {fileID: 1459745556}
-  - {fileID: 992313260}
-  - {fileID: 1535424052}
-  thorns: {fileID: 1309042373}
---- !u!114 &2017287164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017287160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15e67677e472ff46b6b16d917ff4223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  line:
-  - {fileID: 545336557}
-  - {fileID: 692778289}
-  - {fileID: 1612901037}
-  thorns: {fileID: 1609240885}
---- !u!114 &2017287165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017287160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15e67677e472ff46b6b16d917ff4223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  line:
-  - {fileID: 2099300365}
-  - {fileID: 1872191191}
-  - {fileID: 1461555747}
-  thorns: {fileID: 1579688585}
 --- !u!1 &2053756773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5177,6 +5162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2099300362}
+  - component: {fileID: 2099300367}
   - component: {fileID: 2099300365}
   - component: {fileID: 2099300366}
   m_Layer: 5
@@ -5256,6 +5242,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &2099300367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099300361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15e67677e472ff46b6b16d917ff4223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line:
+  - {fileID: 2099300365}
+  - {fileID: 1872191191}
+  - {fileID: 1461555747}
+  thorns: {fileID: 1579688585}
 --- !u!1 &2120206267
 GameObject:
   m_ObjectHideFlags: 0

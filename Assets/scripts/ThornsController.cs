@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ThornsController : MonoBehaviour
@@ -7,9 +6,10 @@ public class ThornsController : MonoBehaviour
     [SerializeField] private SphereColorDetect[] line;
     [SerializeField] private GameObject thorns;
 
+    private int timerValue;
+
     private void OnEnable()
-    {
-        StartCoroutine("CheckLineCor");
+    {  
         CheckLineColor.OnGameOver += ResetThorns;
     }
     private void OnDisable()
@@ -20,29 +20,30 @@ public class ThornsController : MonoBehaviour
 
     IEnumerator CheckLineCor()
     {
-        while (true)
+        if (line[0].sphere != null && line[1].sphere != null && line[2].sphere != null)
         {
-            yield return new WaitForSeconds(2);
+            if (line[0].detectColor != line[1].detectColor || line[1].detectColor != line[2].detectColor)
+            {
+                yield return new WaitForSeconds(1);
+                thorns.SetActive(true);
+            }
+        }
+        else
+        {
+            thorns.SetActive(false);
+        }
+    }
 
-            if (line[0].sphere != null && line[1].sphere != null && line[2].sphere != null)
-            {
-                if (line[0].detectColor != line[1].detectColor || line[1].detectColor != line[2].detectColor)
-                {
-                    thorns.SetActive(true);
-                }
-            }
-            else
-            {
-                thorns.SetActive(false);
-            }
-        }     
+    public void CheckLine()
+    { 
+        StartCoroutine("CheckLineCor");
     }
 
     private void ResetThorns()
     {
         thorns.SetActive(false);
     }
-   
+
 
 
 }
