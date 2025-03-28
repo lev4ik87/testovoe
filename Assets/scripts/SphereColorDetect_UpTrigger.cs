@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SphereColorDetect_UpTrigger : SphereColorDetect
 {
-    [SerializeField] ThornsController thornsController;
+    [SerializeField] private ThornsController thornsController;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent<SphereColor>(out SphereColor _sphere))
@@ -26,7 +26,6 @@ public class SphereColorDetect_UpTrigger : SphereColorDetect
         sphere = _sphere.gameObject;
         detectColor = _sphere.color;
         countTriggerActive++;
-        Debug.Log(countTriggerActive + " " + gameObject.name);
     }
 
 }

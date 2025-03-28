@@ -2516,7 +2516,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 939305681}
   endGameScoreText: {fileID: 740342103}
-  scoreController: {fileID: 939305679}
 --- !u!114 &939305685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2529,7 +2528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c27db77e57be8d4d8c27eeb4284a717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreController: {fileID: 939305679}
 --- !u!114 &939305686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3605,6 +3603,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313961661}
   m_CullTransparentMesh: 1
+--- !u!1 &1329708816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1329708819}
+  - component: {fileID: 1329708818}
+  - component: {fileID: 1329708817}
+  m_Layer: 0
+  m_Name: SceneContex
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &1329708817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329708816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479a03f490aab3341a18bce499735f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreController: {fileID: 939305686}
+  hookSphereDrop: {fileID: 1491333809}
+--- !u!114 &1329708818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329708816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 1329708817}
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
+--- !u!4 &1329708819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329708816}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433657028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,7 +4046,6 @@ MonoBehaviour:
   - {fileID: 8125846809461247323, guid: 0ad9f8f8b0f69ca4c857ee37c562f289, type: 3}
   - {fileID: 8125846809461247323, guid: 3a20bbb87026552469fadeba19483e6f, type: 3}
   - {fileID: 8125846809461247323, guid: 376a9cc757597494c95dd62779792f35, type: 3}
-  hookSphereDrop: {fileID: 1491333809}
 --- !u!114 &1491333809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5438,3 +5514,4 @@ SceneRoots:
   - {fileID: 6678797}
   - {fileID: 2053756776}
   - {fileID: 1561889049}
+  - {fileID: 1329708819}

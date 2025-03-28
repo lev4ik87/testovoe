@@ -12,9 +12,9 @@ public class MenuAnimSphereSpawn : MonoBehaviour
 
     [SerializeField] private Transform menuDynamicCanvas;
 
-    [SerializeField] Color green;
-    [SerializeField] Color blue;
-    [SerializeField] Color red;
+    [SerializeField] private Color green;
+    [SerializeField] private Color blue;
+    [SerializeField] private Color red;
 
   
     private GameObject sphere;

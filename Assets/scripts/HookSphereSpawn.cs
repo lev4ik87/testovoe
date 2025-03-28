@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Zenject;
 
 public class HookSphereSpawn : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class HookSphereSpawn : MonoBehaviour
     [SerializeField] private Transform dynamicCanvas;
     [SerializeField] private GameObject[] spherePrefabs;
 
-    [SerializeField] HookSphereDrop hookSphereDrop;
-
+    [Inject] private HookSphereDrop hookSphereDrop;
+    [Inject] private DiContainer container;
     private GameObject sphere;
+
+    
 
     private void OnEnable()
     {
@@ -26,7 +29,7 @@ public class HookSphereSpawn : MonoBehaviour
 
     private void SphereSpawn()
     {
-     sphere = Instantiate(spherePrefabs[UnityEngine.Random.Range(0, spherePrefabs.Length)], Vector2.zero, Quaternion.identity);
+     sphere = container.InstantiatePrefab(spherePrefabs[UnityEngine.Random.Range(0, spherePrefabs.Length)], Vector2.zero, Quaternion.identity, null);
      sphere.transform.SetParent(hook, false);
      sphere.transform.position = hook.position;
      hookSphereDrop.GetSphere(sphere);

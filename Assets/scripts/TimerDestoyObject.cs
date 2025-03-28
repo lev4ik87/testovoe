@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimerDestoyObject : MonoBehaviour
 {
-    [SerializeField] int timerValue;
+    [SerializeField]private int timerValue;
 
     private void OnEnable()
     {

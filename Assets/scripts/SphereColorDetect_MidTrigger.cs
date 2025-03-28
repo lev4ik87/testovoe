@@ -18,7 +18,5 @@ public class SphereColorDetect_MidTrigger : SphereColorDetect
         detectColor = _sphere.color;
         countTriggerActive++;
         upTrigger.GetComponent<Collider2D>().enabled = true;
-        Debug.Log(countTriggerActive+" "+ gameObject.name);
-
     }
 }

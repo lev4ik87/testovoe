@@ -2,12 +2,10 @@ using UnityEngine;
 
 public abstract class SphereColorDetect : MonoBehaviour
 {
-    //[HideInInspector]
-    public SphereColor.sphereColorsEnum detectColor;
-    //[HideInInspector]
-    public GameObject sphere;
-    protected static int countTriggerActive;
 
+    [HideInInspector] public SphereColor.sphereColorsEnum detectColor;
+    [HideInInspector] public GameObject sphere;
+    protected static int countTriggerActive;
     protected Transform _transform;
     protected Collider2D[] colliderSphere;
 
@@ -45,7 +43,6 @@ public abstract class SphereColorDetect : MonoBehaviour
     {
         sphere = null;
         detectColor = SphereColor.sphereColorsEnum.empty;
-        countTriggerActive--;
-        Debug.Log(countTriggerActive + " " + gameObject.name);
+        countTriggerActive--;    
     }
 }

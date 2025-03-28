@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Zenject;
 
 public class ChangeScoreModel : MonoBehaviour
 {
     private int scoreCountValue;
 
-    private IScoreChangeModel scoreChange;
-   [SerializeField]  private GameObject scoreController;
+   [Inject] private ScoreController scoreController;
 
-  
+
     private void OnEnable()
     {
-        scoreChange = scoreController.GetComponent<IScoreChangeModel>();
-        scoreChange.OnScoreChangeModel += ChangeScore;
+        scoreController.OnScoreChangeModel += ChangeScore;
         CheckLineColor.OnGameOver += ResetScore;
     }
     private void OnDisable()
     {
-        scoreChange.OnScoreChangeModel -= ChangeScore;
+        scoreController.OnScoreChangeModel -= ChangeScore;
         CheckLineColor.OnGameOver -= ResetScore;     
     }
 
@@ -28,7 +27,7 @@ public class ChangeScoreModel : MonoBehaviour
     {
         scoreCountValue += score;
         scoreCountValue = Mathf.Clamp(scoreCountValue, 0, 999999);
-        scoreController.GetComponent<ISetTotalScore>().SetTotalScore(scoreCountValue);    
+        scoreController.SetTotalScore(scoreCountValue);    
     }
 
     private void ResetScore()

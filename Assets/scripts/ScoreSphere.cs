@@ -2,26 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using Zenject;
 public class ScoreSphere: MonoBehaviour
 {
     [SerializeField]private int scoreValue;
 
-    private IScoreChangeController scoreController;
+    [Inject] private ScoreController scoreController;
 
   
-    private void Start()
-    {
-        scoreController = ScoreController.link;
-    }
 
     public void AddScore()
     {   
-        scoreController.ChangeScore(scoreValue);
+        scoreController.ChangeScoreModel(scoreValue);
     }
 
     public void RemoveScore()
     {
-        scoreController.ChangeScore(-scoreValue);
+        scoreController.ChangeScoreModel(-scoreValue);
     } 
 }

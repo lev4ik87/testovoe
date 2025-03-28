@@ -34,8 +34,7 @@ public class SphereColorDetect_DownTrigger : SphereColorDetect
         sphere = _sphere.gameObject;
         detectColor = _sphere.color;
         countTriggerActive++;
-        midTrigger.GetComponent<Collider2D>().enabled = true;
-        Debug.Log(countTriggerActive + " " + gameObject.name);
+        midTrigger.GetComponent<Collider2D>().enabled = true;   
     }
 
     private void DisableEmptyTrigger()

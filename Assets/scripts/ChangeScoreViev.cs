@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
+using Zenject;
 
 public class ChangeScoreViev : MonoBehaviour
 {
     
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI endGameScoreText;
-    [SerializeField] private GameObject scoreController;
+    [Inject] private ScoreController scoreController;
 
- 
+
     private void OnEnable()
-    {   
-        scoreController.GetComponent<IScoreChangeViev>().OnScoreChangeViev += ChangeScoreText;
+    { 
+        scoreController.OnScoreChangeViev += ChangeScoreText;
         CheckLineColor.OnGameOver += ChangeScoreTextToZero;
     }
     private void OnDisable()
     {
-        scoreController.GetComponent<IScoreChangeViev>().OnScoreChangeViev -= ChangeScoreText;
+        scoreController.OnScoreChangeViev -= ChangeScoreText;
         CheckLineColor.OnGameOver -= ChangeScoreTextToZero;
     }
 
